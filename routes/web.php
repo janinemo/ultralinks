@@ -13,6 +13,9 @@
 |
 */
 
+$router->get('/', function () {
+    return 'Desafio Técnico Ultralinks! Acesse a collection do postman para consumir a API';
+});
 
 $router->group(['prefix' => 'auth'], function () use ($router) {
     $router->post('login', 'AuthController@login');

@@ -31,10 +31,16 @@ Se preferir você pode acessar o container do serviço de api
 docker-compose exec users_microservice bash
 ```
 
+Instale as dependências por meio do `composer`
+
+```bash
+composer install
+```
+
 E popular os dados do banco utilizando o `artisan` 
 
 ```bash
-    php artisan migrate:fresh --seed
+php artisan migrate:fresh --seed
 ```
 
 ---
