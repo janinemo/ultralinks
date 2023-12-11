@@ -19,6 +19,12 @@ git clone https://github.com/janinemo/ultralinks.git JanineMachadoOliveira_Ultra
 cd JanineMachadoOliveira_UltralinksProcessoSeletivo
 ```
 
+Não se esqueça de copiar os dados do arquivo `.env.example` para um `.env`
+
+```bash
+cp .env.example .env
+```
+
 Depois basta iniciar um container no docker com o comando `docker-compose` 🐋
 
 ```bash
