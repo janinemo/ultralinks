@@ -1,5 +1,44 @@
 # Processo seletivo Ultralinks 🚀
 
+## Tecnologias
+
+Esse projeto utiliza as seguintes tecnologias:
+
+![Tecnologias](https://skillicons.dev/icons?i=php,laravel,mysql,docker)
+
+## Requisitos
+
+Para rodar o projeto você precisa ter o docker instalado. Só isso 🐋💕.
+
+## Rodando o projeto ☕
+
+Para iniciar o projeto você precisa clonar esse repositório com o seguinte comando:
+
+```bash
+git clone https://github.com/janinemo/ultralinks.git JanineMachadoOliveira_UltralinksProcessoSeletivo
+cd JanineMachadoOliveira_UltralinksProcessoSeletivo
+```
+
+Depois basta iniciar um container no docker com o comando `docker-compose` 🐋
+
+```bash
+docker-compose up -d
+```
+
+Se preferir você pode acessar o container do serviço de api 
+
+```bash
+docker-compose exec users_microservice bash
+```
+
+E popular os dados do banco utilizando o `artisan` 
+
+```bash
+    php artisan migrate:fresh --seed
+```
+
+---
+
 ### Diagramas de classes
 
 ![UML User](_readme/img.png)
