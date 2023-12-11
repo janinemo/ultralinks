@@ -1,0 +1,456 @@
+{
+	"info": {
+		"_postman_id": "0c2e0294-b9d2-43ee-bd3c-1de4d53b0b1e",
+		"name": "Ultralinks Processo seletivo",
+		"description": "Collection criada para o processo seletivo da ultralinks.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2484339"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "Kayli.Jacobson14@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "minhasenhasecreta",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/auth/logout",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/auth/refresh",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Me",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/auth/me",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullname\": \"Janine\",\r\n    \"birthdate\": \"2000-04-25\",\r\n    \"document\": \"11111111200\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"minhasenhasecreta\",\r\n    \"address\": {\r\n        \"zipCode\": \"79780000\",\r\n        \"complement\": \"aa\",\r\n        \"number\": 10\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/:userId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "3d7880c2-a3cf-4207-9d42-6de84988a5d8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User by Document",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/document/:userDocument",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"document",
+								":userDocument"
+							],
+							"variable": [
+								{
+									"key": "userDocument",
+									"value": "11111111200"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Users",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullname\": \"Rener Pires\",\r\n    \"birthdate\": \"2000-04-10\",\r\n    \"document\": \"43123680827\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"teste123#@!AAaa\",\r\n    \"address\": {\r\n        \"zipCode\": \"19020440\",\r\n        \"complement\": \"aa\",\r\n        \"number\": 10\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Deposits",
+			"item": [
+				{
+					"name": "Get Deposits",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/deposits/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"deposits",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Deposit by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/deposits/id/:depositId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"deposits",
+								"id",
+								":depositId"
+							],
+							"variable": [
+								{
+									"key": "depositId",
+									"value": "feb43882-b91b-442d-b66c-a26e0e42108b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Deposit by Cod",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/deposits/cod/:depositCod",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"deposits",
+								"cod",
+								":depositCod"
+							],
+							"variable": [
+								{
+									"key": "depositCod",
+									"value": "DEP0002"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Make a Deposit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 100000,\r\n    \"recipient\": \"11111111200\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/deposits",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"deposits"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transfers",
+			"item": [
+				{
+					"name": "Get Transfers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/transfers/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"transfers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Transfer by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/transfers/id/:transferId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"transfers",
+								"id",
+								":transferId"
+							],
+							"variable": [
+								{
+									"key": "transferId",
+									"value": "23d92e7f-d07d-4817-aadd-f215dbe26223"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Transfer by Cod",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/transfers/cod/:depositCod",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"transfers",
+								"cod",
+								":depositCod"
+							],
+							"variable": [
+								{
+									"key": "depositCod",
+									"value": "TRANSF0001"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Make a Transfer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 100,\r\n    \"payee\": \"11111111200\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/transfers",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"transfers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXV0aC9sb2dpbiIsImlhdCI6MTcwMjI1NjI3OSwiZXhwIjoxNzAyMjU5ODc5LCJuYmYiOjE3MDIyNTYyNzksImp0aSI6Ilp2RWFJUXZrSDRicUFEZHkiLCJzdWIiOiJiOTQzMTZlYS1iYTJkLTQ1NWYtOTM2OC05YTc4Y2FhMTVjMWEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.oBQZY0uOABHgUSzrEByZDOj03474GkHzd66H-Z87PJo",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
